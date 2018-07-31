@@ -30,3 +30,4 @@ template <typename T,
 	}
 	return joined;
 }
+std::string swapcase(std::string str);

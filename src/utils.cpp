@@ -76,3 +76,16 @@ size_t rfind(const std::string &str, const std::string &substr, size_t beg, size
 	return std::string::npos;
 }
 
+std::string swapcase(std::string str)
+{
+	std::string temp = str;
+	for(auto &ch : temp)
+	{
+		int val = static_cast<int>(ch);
+		if (val >= 65 && val <= 90)
+			ch = static_cast<char>(val + 32);
+		else if (val >= 97 && val <= 122)
+			ch = static_cast<char>(val - 32);
+	}
+	return temp;
+}
