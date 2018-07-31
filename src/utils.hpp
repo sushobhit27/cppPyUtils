@@ -31,3 +31,4 @@ template <typename T,
 	return joined;
 }
 std::string swapcase(std::string str);
+std::string zfill(const std::string &str, size_t width);

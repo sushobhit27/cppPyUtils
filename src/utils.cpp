@@ -89,3 +89,19 @@ std::string swapcase(std::string str)
 	}
 	return temp;
 }
+
+std::string zfill(const std::string &str, size_t width)
+{
+	std::string temp;
+	if (str.empty())
+		return str;
+	if (str.length() >= width || str.length() <= 1)
+		return str;
+
+	if (str[0] == '-' || str[0] == '+')
+		temp = str[0] + std::string(width - str.length(), '0') + str.substr(1);
+	else
+		temp = std::string(width - str.length(), '0') + str;
+
+	return temp;
+}
