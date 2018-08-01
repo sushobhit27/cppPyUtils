@@ -32,3 +32,5 @@ template <typename T,
 }
 std::string swapcase(std::string str);
 std::string zfill(const std::string &str, size_t width);
+bool startswith(const std::string &substr, const std::string &str, size_t beg = 0, size_t end = std::string::npos);
+bool endswith(const std::string &substr, const std::string &str, size_t beg = 0, size_t end = std::string::npos);

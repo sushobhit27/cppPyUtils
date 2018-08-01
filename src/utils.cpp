@@ -105,3 +105,17 @@ std::string zfill(const std::string &str, size_t width)
 
 	return temp;
 }
+
+bool startswith(const std::string &substr, const std::string &str, size_t beg, size_t end)
+{
+	if (str.substr(beg, end).find(substr) == 0)
+		return true;
+	return false;
+}
+
+bool endswith(const std::string &substr, const std::string &str, size_t beg, size_t end)
+{
+	if (str.substr(beg, end).rfind(substr) + substr.length() == str.substr(beg, end).length())
+		return true;
+	return false;
+}
