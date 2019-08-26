@@ -23,10 +23,7 @@ template <typename T,
 
 	if (!joined.empty())
 	{
-		std::cout<<joined.find_last_of(sep)<<std::endl;
-		std::cout<<sep.length();
 		joined = joined.replace(joined.rfind(sep), sep.length(), "");
-		std::cout<<"***"<<joined<<"***";
 	}
 	return joined;
 }
