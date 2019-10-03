@@ -36,7 +36,7 @@ bool endswith(const std::string &substr, const std::string &str, size_t beg = 0,
 template <typename T,
     typename Container>
 bool is_in(const T &val, 
-    Container& container,
+    const Container& container,
     typename std::enable_if<std::is_same<T, typename Container::value_type>::value, T>::type* = nullptr)
 {
     return std::find(container.begin(), container.end(), val) != container.end();
@@ -46,7 +46,7 @@ template <typename T,
     typename Container,
     typename UnaryPredicate>
 bool is_in(const T &val, 
-    Container& container,
+    const Container& container,
     UnaryPredicate predicate,
     typename std::enable_if<std::is_same<T, typename Container::value_type>::value, T>::type* = nullptr)
 {
@@ -55,7 +55,8 @@ bool is_in(const T &val,
 
 template <typename T,
     typename Container>
-bool is_in(const T &val, Container& container,
+bool is_in(const T &val, 
+	const Container& container,
     typename std::enable_if<std::is_same<T, typename Container::key_type>::value, T>::type* = nullptr)
 {
     return container.find(val) != container.end();
@@ -65,7 +66,7 @@ template <typename T,
     typename Container,
     typename UnaryPredicate>
 bool is_in(const T &val, 
-    Container& container,
+    const Container& container,
     UnaryPredicate predicate,
     typename std::enable_if<std::is_same<T, typename Container::key_type>::value, T>::type* = nullptr)
 {
